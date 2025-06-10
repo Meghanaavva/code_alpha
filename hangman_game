@@ -1,0 +1,101 @@
+import random
+print("HEYYY....WELCOME TO HANGMAN GAME...!!!")
+print("THERE ARE ONLY 6 LIFELINES...PLAY CAREFULLY")
+print("LET'S START THE GAME")
+hangman_stages = [
+    '''
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+    =========''',  # 6 lives left
+
+    '''
+     +---+
+     |   |
+     O   |
+         |
+         |
+         |
+    =========''',  # 5 lives left
+
+    '''
+     +---+
+     |   |
+     O   |
+     |   |
+         |
+         |
+    =========''',  # 4 lives left
+
+    '''
+     +---+
+     |   |
+     O   |
+    /|   |
+         |
+         |
+    =========''',  # 3 lives left
+
+    '''
+     +---+
+     |   |
+     O   |
+    /|\\  |
+         |
+         |
+    =========''',  # 2 lives left
+
+    '''
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    /    |
+         |
+    =========''',  # 1 life left
+
+    '''
+     +---+
+     |   |
+     O   |
+    /|\\  |
+    / \\  |
+         |
+    =========''',  # 0 lives — GAME OVER
+]
+
+life_lines=6
+
+words=['apple', 'chair', 'table', 'grass', 'stone', 'plant', 'cloud', 'brick', 'spoon', 'light', 'bread', 'piano', 'clock', 'smile', 'drink', 'fruit', 'glass', 'heart', 'shirt', 'candy']
+chosen_word=random.choice(words)
+display=[]
+game_completed=False
+for i in range(len(chosen_word)):  
+    display += '_'
+print(display)
+game_over = False
+while not game_over:
+    guessed_letter = input("Guess a letter: ").lower()  
+    for position in range(len(chosen_word)):  
+        letter = chosen_word[position]
+        if letter == guessed_letter:  
+            display[position] = guessed_letter
+    print(display)
+
+    if guessed_letter not in chosen_word:
+        life_lines -= 1
+        if life_lines == 0:
+            game_over = True
+            print("You lost the game..!!! 1🥲 Try again..☺️")
+    if '_' not in display:
+         game_over = True
+         print("Congratulations! You won the game..!! 🎉")
+    print(hangman_stages[life_lines])
+                
+        
+            
+    
+    
