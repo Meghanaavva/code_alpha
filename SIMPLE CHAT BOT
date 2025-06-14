@@ -1,0 +1,16 @@
+while True:
+    user_input=input("You: ").lower()
+    
+    if user_input=="hello":
+        print("CHAT BOT : hi..!!")
+    elif user_input=="how are you":
+        print("CHAT BOT:I'm fine,Thanks")
+    elif user_input=="bye":
+        print("CHAT BOT:Good Bye...!!!!")
+        break
+    else:
+        print("CHAT BOT:I'm sorry i can't understand")
+            
+       
+          
+            
