@@ -69,7 +69,7 @@ hangman_stages = [
 
 life_lines=6
 
-words=['apple', 'chair', 'table', 'grass', 'stone', 'plant', 'cloud', 'brick', 'spoon', 'light', 'bread', 'piano', 'clock', 'smile', 'drink', 'fruit', 'glass', 'heart', 'shirt', 'candy']
+words=['apple', 'chair', 'table', 'grass', 'stone',]
 chosen_word=random.choice(words)
 display=[]
 game_completed=False
